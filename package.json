@@ -1,0 +1,44 @@
+{
+  "name": "mermaid-anywhere",
+  "version": "0.1.0",
+  "description": "Chrome extension that renders Mermaid diagrams on any web page — ChatGPT, GitHub, Confluence, Stack Overflow, and more",
+  "type": "module",
+  "license": "MIT",
+  "author": "Starmorph <hello@starmorph.com> (https://starmorph.com)",
+  "homepage": "https://mermaideditor.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/starmorph/mermaid-anywhere.git"
+  },
+  "bugs": {
+    "url": "https://github.com/starmorph/mermaid-anywhere/issues"
+  },
+  "keywords": [
+    "mermaid",
+    "mermaid-js",
+    "chrome-extension",
+    "browser-extension",
+    "diagram",
+    "flowchart",
+    "sequence-diagram",
+    "mermaid-renderer",
+    "chatgpt",
+    "github",
+    "confluence",
+    "svg"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "mermaid": "11.4.1"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.4.0",
+    "@types/chrome": "^0.1.39",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.3"
+  },
+  "packageManager": "pnpm@10.29.1"
+}
