@@ -5,7 +5,16 @@
 <p align="center">
   <strong>Render Mermaid diagrams on any web page — automatically.</strong><br/>
   A Chrome extension that detects Mermaid code blocks and replaces them with rendered SVG diagrams.<br/>
-  Built by <a href="https://starmorph.com">Starmorph</a> · Full editor at <a href="https://mermaideditor.io">mermaideditor.io</a>
+  Built by <a href="https://starmorph.com">Starmorph</a> · Part of <a href="https://mermaideditor.io/extension">Mermaid Editor</a>
+</p>
+
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/mermaid-anywhere-%E2%80%94-diagra/bhildaomidmncmkppemphflpdlfjnbce">
+    <img src="https://img.shields.io/badge/Install-Chrome%20Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Install Mermaid Anywhere from the Chrome Web Store" />
+  </a>
+  <a href="https://mermaideditor.io/extension">
+    <img src="https://img.shields.io/badge/View-Extension%20Page-7C3AED?style=for-the-badge" alt="View Mermaid Anywhere on Mermaid Editor" />
+  </a>
 </p>
 
 <p align="center">
@@ -14,12 +23,6 @@
   <a href="https://github.com/starmorph/mermaid-anywhere/issues"><img src="https://img.shields.io/github/issues/starmorph/mermaid-anywhere" alt="Issues" /></a>
   <img src="https://img.shields.io/badge/manifest-v3-blue" alt="Manifest V3" />
   <img src="https://img.shields.io/badge/mermaid.js-11.4.1-ff69b4" alt="Mermaid.js 11.4.1" />
-</p>
-
-<p align="center">
-  <a href="https://chromewebstore.google.com/detail/mermaid-anywhere-diagram/placeholder">
-    <img src="https://img.shields.io/badge/Install-Chrome%20Web%20Store-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Install from Chrome Web Store" />
-  </a>
 </p>
 
 ---
@@ -32,14 +35,11 @@
 
 ## Get Started
 
-```bash
-pnpm install
-pnpm build
-```
+[**Install Mermaid Anywhere from the Chrome Web Store →**](https://chromewebstore.google.com/detail/mermaid-anywhere-%E2%80%94-diagra/bhildaomidmncmkppemphflpdlfjnbce)
 
-Load the `dist/` folder as an unpacked extension in `chrome://extensions` with Developer mode enabled.
+[**View features, screenshots, and documentation on Mermaid Editor →**](https://mermaideditor.io/extension)
 
-> Requires Node.js 18+ and pnpm. Chrome or any Chromium-based browser (Edge, Brave, Arc, Vivaldi).
+Install the extension, then visit any page containing a Mermaid code block. Mermaid Anywhere detects and renders it automatically—no account or configuration required.
 
 ## How It Works
 
@@ -141,8 +141,9 @@ src/
 
 ## Links
 
+- [Install from the Chrome Web Store](https://chromewebstore.google.com/detail/mermaid-anywhere-%E2%80%94-diagra/bhildaomidmncmkppemphflpdlfjnbce) — Add Mermaid Anywhere to Chrome
+- [Mermaid Anywhere on Mermaid Editor](https://mermaideditor.io/extension) — Features, screenshots, and documentation
 - [Mermaid Editor](https://mermaideditor.io) — Full-featured online Mermaid diagram editor with AI, themes, and export
-- [Extension Landing Page](https://mermaideditor.io/extension) — Screenshots, features, and documentation
 - [Mermaid.js](https://mermaid.js.org/) — The diagramming library that powers this extension
 - [Report a Bug](https://github.com/starmorph/mermaid-anywhere/issues) — Open an issue on GitHub
 
