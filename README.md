@@ -108,6 +108,8 @@ No host permissions. No cookies. No network requests. No browsing history access
 
 ## Development
 
+Use pnpm 10.29.1 to match the version declared in `package.json`.
+
 ```bash
 pnpm install       # Install dependencies
 pnpm dev           # Start dev server with HMR
