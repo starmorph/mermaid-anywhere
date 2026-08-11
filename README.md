@@ -46,21 +46,6 @@ Install the extension, then visit any page containing a Mermaid code block. Merm
 ```mermaid
 sequenceDiagram
     participant Client
-    participant Cursor
-    participant "Render worker" as RenderWorker
-    participant GitHub
-
-    Client->>Cursor: Render trigger
-    Cursor->>RenderWorker: Start render job
-    RenderWorker->>GitHub: Fetch content
-    GitHub-->>RenderWorker: Return response
-    RenderWorker-->>Cursor: Return rendered result
-    Cursor-->>Client: Display diagram
-```
-
-```mermaid
-sequenceDiagram
-    participant Client
     participant RenderTrigger as Render trigger
     participant Cursor
     participant RenderWorker as Render worker
