@@ -51,38 +51,6 @@ sequenceDiagram
     participant RenderWorker as Render worker
     participant GitHub
 
-    Client->>RenderTrigger: Request render
-    RenderTrigger->>Cursor: Trigger render flow
-    Cursor->>RenderWorker: Start render job
-    RenderWorker->>GitHub: Fetch repository content
-    GitHub-->>RenderWorker: Return source data
-    RenderWorker-->>Cursor: Return rendered result
-    Cursor-->>RenderTrigger: Deliver output
-    RenderTrigger-->>Client: Show rendered response
-```
-
-```mermaid
-sequenceDiagram
-    participant Client
-    participant "Render trigger" as RenderTrigger
-    participant Cursor
-    participant "Render worker" as RenderWorker
-    participant GitHub
-
-    Client->>RenderTrigger: Start render request
-    RenderTrigger->>Cursor: Forward render task
-    Cursor->>RenderWorker: Dispatch render work
-    RenderWorker->>GitHub: Publish README update
-```
-
-```mermaid
-sequenceDiagram
-    participant Client
-    participant RenderTrigger as Render trigger
-    participant Cursor
-    participant RenderWorker as Render worker
-    participant GitHub
-
     Client->>RenderTrigger: Request diagram render
     RenderTrigger->>Cursor: Start render flow
     Cursor->>RenderWorker: Dispatch render job
