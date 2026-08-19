@@ -61,6 +61,20 @@ sequenceDiagram
     RenderTrigger-->>Client: Show rendered response
 ```
 
+```mermaid
+sequenceDiagram
+    participant Client
+    participant "Render trigger" as RenderTrigger
+    participant Cursor
+    participant "Render worker" as RenderWorker
+    participant GitHub
+
+    Client->>RenderTrigger: Start render request
+    RenderTrigger->>Cursor: Forward render task
+    Cursor->>RenderWorker: Dispatch render work
+    RenderWorker->>GitHub: Publish README update
+```
+
 The content script scans every page for Mermaid code blocks. When found, it sends the source to an offscreen document where Mermaid.js renders it to SVG. The result is injected back into the page inside a Shadow DOM container for complete style isolation.
 
 The offscreen document pattern is required because Mermaid v10+ uses `Function()` internally, which Chrome extension CSP blocks in content scripts and service workers.
