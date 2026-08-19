@@ -51,10 +51,10 @@ sequenceDiagram
     participant RenderWorker as Render worker
     participant GitHub
 
-    Client->>RenderTrigger: Request diagram render
-    RenderTrigger->>Cursor: Start render flow
+    Client->>RenderTrigger: Trigger render
+    RenderTrigger->>Cursor: Send render request
     Cursor->>RenderWorker: Dispatch render job
-    RenderWorker->>GitHub: Fetch README content
+    RenderWorker->>GitHub: Fetch repository content
     GitHub-->>RenderWorker: Return repository content
 ```
 
