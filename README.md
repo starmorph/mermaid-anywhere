@@ -53,20 +53,6 @@ sequenceDiagram
 
     Client->>RenderTrigger: Trigger render
     RenderTrigger->>Cursor: Forward request
-    Cursor->>RenderWorker: Start render job
-    RenderWorker->>GitHub: Fetch repository content
-```
-
-```mermaid
-sequenceDiagram
-    participant Client
-    participant RenderTrigger as Render trigger
-    participant Cursor
-    participant RenderWorker as Render worker
-    participant GitHub
-
-    Client->>RenderTrigger: Trigger render
-    RenderTrigger->>Cursor: Forward request
     Cursor->>RenderWorker: Dispatch job
     RenderWorker->>GitHub: Publish result
 ```
