@@ -61,6 +61,26 @@ The content script scans every page for Mermaid code blocks. When found, it send
 
 The offscreen document pattern is required because Mermaid v10+ uses `Function()` internally, which Chrome extension CSP blocks in content scripts and service workers.
 
+### Example Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Trigger as Render trigger
+    participant Cursor
+    participant Worker as Render worker
+    participant GitHub
+
+    Client->>Trigger: Request render
+    Trigger->>Cursor: Forward request
+    Cursor->>Worker: Dispatch render job
+    Worker->>GitHub: Fetch source content
+    GitHub-->>Worker: Return content
+    Worker-->>Cursor: Return render result
+    Cursor-->>Trigger: Send completion status
+    Trigger-->>Client: Deliver response
+```
+
 ## Features
 
 ### Auto-Detection
