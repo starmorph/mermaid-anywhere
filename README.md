@@ -43,8 +43,22 @@ Install the extension, then visit any page containing a Mermaid code block. Merm
 
 ## How It Works
 
-```
-Content Script → Service Worker → Offscreen Document (mermaid.js) → SVG back via Shadow DOM
+```mermaid
+sequenceDiagram
+    participant Client
+    participant RenderTrigger as Render trigger
+    participant Cursor
+    participant RenderWorker as Render worker
+    participant GitHub
+
+    Client->>RenderTrigger: Trigger render
+    RenderTrigger->>Cursor: Forward render request
+    Cursor->>RenderWorker: Dispatch render job
+    RenderWorker->>GitHub: Fetch repository content
+    GitHub-->>RenderWorker: Return content
+    RenderWorker-->>Cursor: Send rendered result
+    Cursor-->>RenderTrigger: Return render response
+    RenderTrigger-->>Client: Display diagram
 ```
 
 The content script scans every page for Mermaid code blocks. When found, it sends the source to an offscreen document where Mermaid.js renders it to SVG. The result is injected back into the page inside a Shadow DOM container for complete style isolation.
