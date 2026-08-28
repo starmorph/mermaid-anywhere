@@ -55,10 +55,10 @@ sequenceDiagram
     RenderTrigger->>Cursor: Forward render request
     Cursor->>RenderWorker: Dispatch render job
     RenderWorker->>GitHub: Fetch repository content
-```
-
-```
-Content Script → Service Worker → Offscreen Document (mermaid.js) → SVG back via Shadow DOM
+    GitHub-->>RenderWorker: Return content
+    RenderWorker-->>Cursor: Send rendered result
+    Cursor-->>RenderTrigger: Return render response
+    RenderTrigger-->>Client: Display diagram
 ```
 
 The content script scans every page for Mermaid code blocks. When found, it sends the source to an offscreen document where Mermaid.js renders it to SVG. The result is injected back into the page inside a Shadow DOM container for complete style isolation.
